@@ -149,7 +149,6 @@ def task_1(categories):
 def task_2(categories):
     """Create Data For Excel"""
     for c in categories:
-        all_contents = list()
         with open(f'{c}.json') as file:
             contents = json.loads(file.read())
             for content in contents:
@@ -172,7 +171,6 @@ def task_2(categories):
                         'label': content_data.get('label', ''),
                     }
                     clean_stores_before_excel(c, data)
-            all_contents.append(data)
 
 
 def task_3(categories):
@@ -187,6 +185,7 @@ def task_3(categories):
 if __name__ == '__main__':
     _categories = ['electronic-devices', 'personal', 'home-kitchen']
 
-    # task_1(categories)  # Done
-    # task_2(_categories)  # Done
-    task_3(_categories)  # Done
+    task_1(_categories)
+    task_2(_categories)
+    task_3(_categories)
+
